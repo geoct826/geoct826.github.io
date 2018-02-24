@@ -3,7 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.tuan.pro/home/1/</loc>
+  </url>
+  
+  <url>
     <loc>http://www.tuan.pro/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tuan.pro/home/</loc>
     <priority>0</priority>
   </url>
   
