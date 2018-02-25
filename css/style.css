@@ -45,7 +45,7 @@
   	-o-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed;
-	position: relative;
+	position: fixed !important;
   z-index: -1;
 }
 
