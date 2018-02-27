@@ -39,7 +39,7 @@
 
 .callout-background {
 	background-color: #0078A0;
-	background-image: url("images/callout.jpg");
+	background-image: url("/images/callout.jpg");
 	background-position: bottom;
 	align-content: center;
 	width: 100%;
