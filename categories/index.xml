@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on tuan.pro</title>
-    <link>https://blog-george644261.codeanyapp.com/categories/</link>
+    <link>https://www.tuan.pro/categories/</link>
     <description>Recent content in Categories on tuan.pro</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     
-	<atom:link href="https://blog-george644261.codeanyapp.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.tuan.pro/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
