@@ -3,26 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.tuan.pro/home/1/</loc>
+    <loc>https://blog-george644261.codeanyapp.com/post/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tuan.pro/categories/</loc>
+    <loc>https://blog-george644261.codeanyapp.com/home/1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog-george644261.codeanyapp.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.tuan.pro/home/</loc>
+    <loc>https://blog-george644261.codeanyapp.com/home/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.tuan.pro/tags/</loc>
+    <loc>https://blog-george644261.codeanyapp.com/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.tuan.pro/</loc>
+    <loc>https://blog-george644261.codeanyapp.com/</loc>
     <priority>0</priority>
   </url>
   

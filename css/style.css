@@ -16,6 +16,9 @@
   height: 40px;
   margin-top: 0px;
   font-family: "Roboto", sans-serif;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .top-bar ul {
@@ -36,17 +39,19 @@
 
 .callout-background {
 	background-color: #0078A0;
-	background-image: url("images/IMG_2937.jpg");
+	background-image: url("images/callout.jpg");
 	background-position: bottom;
-	height: 100%;
+	align-content: center;
+	width: 100%;
+	height: 100vh;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed;
-	position: fixed !important;
-  z-index: -1;
+	position: relative;
+	z-index: -1;
 }
 
 .callout-text {
@@ -54,8 +59,8 @@
 	font-size: 20px;
 	color: #fff;
 	text-align: center;
-	padding-top: 165px;
-	padding-bottom: 80px;
+	padding-top: 80vh;
+	/* padding-bottom: 80px; */
 }
 
 .parallax-content {
@@ -65,11 +70,17 @@
 	padding: 20px;
 	font-size: 25px;
 	background-color: #fff;
+	/* margin-top: 275px; */
 }
 
 .img-circle {
     border-radius: 50%;
 		height: 200px;
+}
+
+.post {
+	top: 40px;
+	z-index: -1;
 }
 
 p {
