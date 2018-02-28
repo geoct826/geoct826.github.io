@@ -6,9 +6,20 @@
     <description>Recent content on tuan.pro</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.tuan.pro/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Codeanywhere IDE</title>
+      <link>https://www.tuan.pro/post/post-01/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tuan.pro/post/post-01/</guid>
+      <description>Now that I&amp;rsquo;ve decided to use Hugo as my website generator and GitHub as my hosting, the next step is to create a development enviornment to create the site. Setting up a development environment can be a bit daunting if you haven&amp;rsquo;t done it before. But there are cloud based IDE or Integrated Development Environment, that can help with that.
+For my blog site, I&amp;rsquo;ve decided to use Codeanywhere as my cloud-based IDE.</description>
+    </item>
     
     <item>
       <title></title>
