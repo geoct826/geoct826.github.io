@@ -81,7 +81,8 @@
 
 .post {
 	top: 40px;
-	z-index: -1;
+	font-size: 25px;
+  z-index: -1;
 }
 
 body {
