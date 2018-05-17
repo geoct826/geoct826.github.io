@@ -45,89 +45,19 @@
 			<div id="posts" class="post">
 			
   <h1>Codeanywhere IDE</h1>
-  <p>Now that I&rsquo;ve decided to use Hugo as my website generator and GitHub as my hosting, the next step is to create a development enviornment to create the site. Setting up a development environment can be a bit daunting if you haven&rsquo;t done it before. But there are cloud based IDE or Integrated Development Environment, that can help with that.</p>
+  <p>Domain names are pretty straightforward to come by these days. There are lots of domain sites like Hover, Namecheap, GoDaddy, HostGator, are just some examples. Moreover, new generic top-level domains like .me,  .beer, .cafe, are ensuring that there is no shortage of creative domain names going forward. However, what do you do once you find and purchase the perfect domain name?</p>
 
-<p>For my blog site, I&rsquo;ve decided to use Codeanywhere as my cloud-based IDE. It simplifies the development environment setup and provides the flexibility to be able to work on my site regardless of which computer I am on. They now they even support iOS and Android devices so I can also work on my iPhone.</p>
+<p>There are a lot of services out there that help people create their own personal website. But to have full control of your own site and layout, nothing can compare with the ultimate flexibility you get if you create your own site. True, building a website from scratch is not for the faint of heart, however, it is a rewarding experience.</p>
+
+<p>This site is built from scratch using <a href="https://gohugo.io">Hugo</a> as a static website generator and <a href="https://github.com">GitHub</a> as hosting solution. In this first series of blogs, I intend to go through the process I used to create, manage, and publish this site. However, before I get into the development details, the very first thing that any developer needs is a development environment. Setting up a development environment can be a tedious process, but with the advent of some great cloud-based Integrated Development Environment (IDE),  this process is greatly simplified, all you need is a web browser.</p>
+
+<p>For this development, I&rsquo;m using <a href="https://codeanywhere.com">Codeanywhere</a> as my cloud-based IDE. It simplifies the development environment setup and provides the flexibility to be able to work on my site regardless of which computer I am on. They now they even support iOS and Android devices so I can edit files on my iPhone.</p>
 
 <p>Setting up a Codeanywhere account is pretty straightforward; using my GitHub account, it quickly created the account and even automatically setup SSH keys between the GitHub account and the Codeanywhere environment.</p>
 
-<p>When first signing into Codeanywhere, it automatically creates a default project and takes the user directly to creating a container in the project. Containers are virtual development environments and come in many flavors with either Ubuntu 14.04 or Centos 6.5 as the base operating system and a variety of development setup. My personal preference is the Go Development Stack.
-Once the container is set up, there are some basic setups needed.</p>
+<p>When first signing into Codeanywhere, it automatically creates a default project and takes the user directly to creating a container in the project. Containers are virtual development environments and come in many flavors with either Ubuntu 14.04 or Centos 6.5 as the base operating system and a variety of development setup. Since I&rsquo;m planning on using Hugo as my static website generator, I am using the Go Development Stack.</p>
 
-<p>First, installing Hugo.</p>
-
-<p>While Hugo is not available in Ubuntu&rsquo;s default repositories, packages are available on GitHub for various architectures and distributions. The one that we&rsquo;re looking for is the Linux 64-bit distribution. You can find the latest Hugo packages at <a href="https://github.com/gohugoio/hugo/releases/">https://github.com/gohugoio/hugo/releases/</a>.</p>
-
-<p>To install it, first, open up the SSH Terminal, by right-clicking on the container and selecting SSH Terminal.
-Downloading the Hugo package through the wget command and paste the link location you copied to download Hugo:</p>
-
-<p>wget  <a href="https://github.com/gohugoio/hugo/releases/download/v0.35/hugo_0.35_Linux-64bit.deb">https://github.com/gohugoio/hugo/releases/download/v0.35/hugo_0.35_Linux-64bit.deb</a></p>
-
-<p>Now, you can install the package with dpkg by typing:</p>
-
-<p>sudo dpkg -i hugo*.deb</p>
-
-<p>And then you can verify the install.</p>
-
-<p>hugo version</p>
-
-<p>You should see something like this.</p>
-
-<p>Hugo Static Site Generator v0.35 linux/amd64 BuildDate: 2018-01-31T10:44:43Z</p>
-
-<p>Once Hugo is installed, you can remove the installation package</p>
-
-<p>rm *.deb</p>
-
-<p>Next, setup the development webserver</p>
-
-<p>Hugo being a static website generator, you&rsquo;ll need to create a development web server to test the generated site. Setting up a web server in go is relatively simple.</p>
-
-<p>In the root workspace create a file called server.go by right clicking on the container name and select Create File.</p>
-
-<p>In server.go, use the following code &ldquo;</p>
-
-<p>package main</p>
-
-<p>import (
-  &ldquo;os&rdquo;
-  &ldquo;log&rdquo;
-  &ldquo;net/http&rdquo;
-)</p>
-
-<p>func main() {
-  port := os.Getenv(&ldquo;port&rdquo;)</p>
-
-<p>fs := http.FileServer(http.Dir(&ldquo;public/&rdquo;))
-  http.Handle(&ldquo;/&rdquo;, fs)</p>
-
-<p>log.Println(&ldquo;Starting webserver listening on&rdquo;, port)
-  http.ListenAndServe(&rdquo;:&ldquo;+port, nil)
-}</p>
-
-<p>server.go creates a golang webserver serving files in a directory called public on the port specified in the config file.</p>
-
-<p>Next, open up the config file to setup commands and parameters necessary for the Stack to run.</p>
-
-<p>Right click on the container name to open up the config, and add the port number as a envionment varialbe.</p>
-
-<p>&ldquo;environment&rdquo;: {
-    &ldquo;port&rdquo;: &ldquo;3000&rdquo;
-},</p>
-
-<p>And dd the command to start the go webserver in the config files.</p>
-
-<p>&ldquo;commands&rdquo;: [
-    &ldquo;go run server.go&rdquo;
-],</p>
-
-<p>Next, start the webserver by selecting Run, you should see the log line &ldquo;Starting webserver listening on 3000&rdquo;</p>
-
-<p>To preview the site, open up the info screen on the container and see the provided custom link to access the website.</p>
-
-<p>Because we haven&rsquo;t added a public directory, you should see &ldquo;404 page not found&rdquo;.</p>
-
-<p>So lets add an index.html file into the public directory. First create a directory called public and add in the following lines into index.html</p>
+<p>And that&rsquo;s it. With this development environment setup, I am now ready to start building my site from scratch.</p>
 
 
 		</div>
