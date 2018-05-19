@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog Introduction on tuan.pro</title>
+    <title>Welcome on tuan.pro</title>
     <link>https://www.tuan.pro/post/</link>
-    <description>Recent content in Blog Introduction on tuan.pro</description>
+    <description>Recent content in Welcome on tuan.pro</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Codeanywhere IDE</title>
+      <title>Creating a blog.</title>
       <link>https://www.tuan.pro/post/post-01/</link>
       <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       

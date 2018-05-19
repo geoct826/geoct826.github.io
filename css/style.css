@@ -79,6 +79,10 @@
 		height: 200px;
 }
 
+.img .banner {
+    padding-top: 50px;
+}
+
 .post {
   top: 40px;
   font-size: 25px;
