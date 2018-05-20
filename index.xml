@@ -19,8 +19,7 @@
       <guid>https://www.tuan.pro/post/post-02/</guid>
       <description>After creating an IDE, it needs to be setup with Hugo and the code to create a hugo site.
 First, installing Hugo.
-While Hugo is not available in Ubuntu&amp;rsquo;s default repositories, packages are available on GitHub for various architectures and distributions. The one that we&amp;rsquo;re looking for is the Linux 64-bit distribution. You can find the latest Hugo packages at https://github.com/gohugoio/hugo/releases/.
-To install it, first, open up the SSH Terminal, by right-clicking on the container and selecting SSH Terminal.</description>
+While Hugo is not available in Ubuntu&amp;rsquo;s default repositories, packages are available on GitHub for various architectures and distributions. The one that we&amp;rsquo;re looking for is the Linux 64-bit distribution. You can find the latest Hugo packages at https://github.com/gohugoio/hugo/releases/. To install it, first, open up the SSH Terminal, by right-clicking on the container and selecting SSH Terminal.</description>
     </item>
     
     <item>
