@@ -12,9 +12,21 @@
     
     
     <item>
+      <title>Setting up Hugo.</title>
+      <link>https://www.tuan.pro/post/post-02/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tuan.pro/post/post-02/</guid>
+      <description>After creating an IDE, it needs to be setup with Hugo and the code to create a hugo site.
+First, installing Hugo.
+While Hugo is not available in Ubuntu&amp;rsquo;s default repositories, packages are available on GitHub for various architectures and distributions. The one that we&amp;rsquo;re looking for is the Linux 64-bit distribution. You can find the latest Hugo packages at https://github.com/gohugoio/hugo/releases/.
+To install it, first, open up the SSH Terminal, by right-clicking on the container and selecting SSH Terminal.</description>
+    </item>
+    
+    <item>
       <title>Creating a blog.</title>
       <link>https://www.tuan.pro/post/post-01/</link>
-      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.tuan.pro/post/post-01/</guid>
       <description>Domain names are pretty straightforward to come by these days. There are lots of domain sites like Hover, Namecheap, GoDaddy, HostGator, are just some examples. Moreover, new generic top-level domains like .me, .beer, .cafe, are ensuring that there is no shortage of creative domain names going forward. However, what do you do once you find and purchase the perfect domain name?

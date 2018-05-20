@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="no-js" lang= dir="ltr">
+	  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuan.pro</title>
+		
+		
+    <link rel="stylesheet" type="text/css" href="https://www.tuan.pro/css/foundation.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://www.tuan.pro/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.tuan.pro/css/open-iconic-foundation.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet" />
+
+		
+		
+		
+		
+
+    
+		
+  </head>
+	<body>
+		<div class=row>
+			<div class="top-bar">
+  <div class="top-bar-left">
+    <span data-responsive-toggle="main-nav" data-hide-for="medium">
+      <button type="button" data-toggle><span class="fi-menu"></span>&nbsp;&nbsp;</button>
+    </span>
+    <strong>tuan.pro</strong>  
+  </div>
+  
+  <div id="main-nav" data-animate="slide-in-left slide-out-left">
+    <div class="top-bar-right">  
+      <ul class="vertical medium-horizontal menu" data-dropdown-menu >
+        <li><a href="https://www.tuan.pro/">About</a></li>
+        <li><a href="https://www.tuan.pro/post">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  
+</div>
+
+			
+			<div id="posts" class="post">
+			
+  
+  <div class="grid-container">
+    <div class="grid-x">
+      
+
+   
+  
+  	<div class="cell" align="center"> 
+		  <img class="banner" src=https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto&#61;format&amp;fit&#61;crop&amp;w&#61;1200&amp;h&#61;600>
+	  </div>
+  
+  
+  <div class="cell">
+    <h3>Setting up Hugo.</h3>  
+</div>
+ 
+<div class="cell">
+    <p>After creating an IDE, it needs to be setup with Hugo and the code to create a hugo site.</p>
+
+<p>First, installing Hugo.</p>
+
+<p>While Hugo is not available in Ubuntu&rsquo;s default repositories, packages are available on GitHub for various architectures and distributions. The one that we&rsquo;re looking for is the Linux 64-bit distribution. You can find the latest Hugo packages at <a href="https://github.com/gohugoio/hugo/releases/">https://github.com/gohugoio/hugo/releases/</a>.</p>
+
+<p>To install it, first, open up the SSH Terminal, by right-clicking on the container and selecting SSH Terminal.
+Downloading the Hugo package through the wget command and paste the link location you copied to download Hugo:</p>
+
+<p>wget  <a href="https://github.com/gohugoio/hugo/releases/download/v0.35/hugo_0.35_Linux-64bit.deb">https://github.com/gohugoio/hugo/releases/download/v0.35/hugo_0.35_Linux-64bit.deb</a></p>
+
+<p>Now, you can install the package with dpkg by typing:</p>
+
+<p>sudo dpkg -i hugo*.deb</p>
+
+<p>And then you can verify the install.</p>
+
+<p>hugo version</p>
+
+<p>You should see something like this.</p>
+
+<p>Hugo Static Site Generator v0.35 linux/amd64 BuildDate: 2018-01-31T10:44:43Z</p>
+
+<p>Once Hugo is installed, you can remove the installation package</p>
+
+<p>rm *.deb</p>
+
+<p>Next, setup the development webserver</p>
+
+<p>Hugo being a static website generator, you&rsquo;ll need to create a development web server to test the generated site. Setting up a web server in go is relatively simple.</p>
+
+<p>In the root workspace create a file called server.go by right clicking on the container name and select Create File.</p>
+
+<p>In server.go, use the following code &ldquo;</p>
+
+<pre><code>package main
+
+import (
+  &quot;os&quot;
+  &quot;log&quot;
+  &quot;net/http&quot;
+)
+
+func main() {
+  port := os.Getenv(&quot;port&quot;)
+
+  fs := http.FileServer(http.Dir(&quot;public/&quot;))
+  http.Handle(&quot;/&quot;, fs)
+	
+  log.Println(&quot;Starting webserver listening on&quot;, port)
+  http.ListenAndServe(&quot;:&quot;+port, nil)
+}
+</code></pre>
+
+<p>server.go creates a golang webserver serving files in a directory called public on the port specified in the config file.</p>
+
+<p>Next, open up the config file to setup commands and parameters necessary for the Stack to run.</p>
+
+<p>Right click on the container name to open up the config, and add the port number as a envionment varialbe.</p>
+
+<p>&ldquo;environment&rdquo;: {
+    &ldquo;port&rdquo;: &ldquo;3000&rdquo;
+},</p>
+
+<p>And dd the command to start the go webserver in the config files.</p>
+
+<p>&ldquo;commands&rdquo;: [
+    &ldquo;go run server.go&rdquo;
+],</p>
+
+<p>Next, start the webserver by selecting Run, you should see the log line &ldquo;Starting webserver listening on 3000&rdquo;</p>
+
+<p>To preview the site, open up the info screen on the container and see the provided custom link to access the website.</p>
+
+<p>Because we haven&rsquo;t added a public directory, you should see &ldquo;404 page not found&rdquo;.</p>
+
+<p>So lets add an index.html file into the public directory. First create a directory called public and add in the following lines into index.html</p>
+
+<pre><code>&lt;body&gt;
+  &lt;h1&gt;
+    Hello World
+  &lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Now, if you go to the preview link, you should see Hello World. What the webserver is doing is serving whtever static file is in the public directory. So if you go an edit the index.html file that was just created to</p>
+
+<pre><code>&lt;body&gt;
+  &lt;h1&gt;
+    Hello Bob
+  &lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>And if you go tho the peview link, you should see it now as Hello Bob.</p>
+  
+</div>
+      
+<div class="cell small-6">
+  <p>
+  
+      previous post: <a class="previous" href="https://www.tuan.pro/post/post-01/"> Creating a blog.</a>
+  
+  </p>
+
+</div>
+
+<div class="cell small-6">
+  <p align="right">
+   
+  </p>
+
+</div>
+    
+    </div>
+    </div>
+
+
+		</div>
+		<script src="https://www.tuan.pro/js/vendor/jquery.js"></script>
+<script src="https://www.tuan.pro/js/vendor/what-input.js"></script>
+<script src="https://www.tuan.pro/js/vendor/foundation.min.js"></script>
+<script src="https://www.tuan.pro/js/app.js"></script>
+  </body>
+</html>

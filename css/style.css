@@ -79,7 +79,7 @@
 		height: 200px;
 }
 
-.img .banner {
+.banner {
     padding-top: 50px;
 }
 
@@ -151,4 +151,13 @@ a {
     -ms-transition: .5s;
     -moz-transition: .5s;
     -webkit-transition: .5s; 
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 12px;
+  display: block;
 }

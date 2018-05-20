@@ -5,10 +5,14 @@ $(window).on('changed.zf.mediaquery', function() {
   $('.is-dropdown-submenu.invisible').removeClass('invisible');
 });
 
+var homepageExist = !!document.getElementById("homepage");
+
+if (homepageExist) {
 var reqPad = 420 - document.getElementById("homepage").clientHeight;
 if (reqPad > 0 ) {
 		console.log("padding required");
 		document.getElementById("about-callout").style.marginTop = reqPad + "px"; 
+};
 };
 
 $(function() {
