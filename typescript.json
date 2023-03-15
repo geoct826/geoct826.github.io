@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "module": "ESNext",
+      "allowJs": true,
+      "target": "ESNext",
+      "jsx": "React",
+      "lib": ["DOM", "ESNext"],
+      "type": ["svg.d"],
+      "moduleResolution": "node",
+      "strict": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": ["./src/**/*", "./gatsby-config.ts"]
+  }
